@@ -1,0 +1,8 @@
+FROM postgres:alpine
+
+EXPOSE 5432
+
+ENV POSTGRES_DB flystalker-db
+ENV POSTGRES_USER flystalker-user
+ENV POSTGRES_PASSWORD flystalker-password
+ENV PGDATA /pgdata
