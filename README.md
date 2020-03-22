@@ -1,1 +1,1 @@
-# flystalker-deploy
+# FlyStalker App Deploy Configurations
