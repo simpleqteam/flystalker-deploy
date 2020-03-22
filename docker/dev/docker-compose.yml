@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+    rabbitmq:
+        container_name: flystalker-rabbitmq-dev
+        image: simpleqteam/flystalker-rabbitmq
+        hostname: flystalker-rabbitmq
+        build:
+            context: .
+            dockerfile: rabbitmq-dockerfile
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+    postgres:
+        container_name: flystalker-db-dev
+        image: simpleqteam/flystalker-postgres
+        build:
+            context: .
+            dockerfile: postgres-dockerfile
+        ports:
+            - "5432:5432"
+        volumes:
+            - type: bind
+              source: .pgdata-dev
+              target: /pgdata
